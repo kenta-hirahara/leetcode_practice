@@ -1,12 +1,18 @@
 class TreeNode():
+    """
+    typical leetcode node class.
+    """
     def __init__(self, val=0, left=None, right=None):
         self.val = val
         self.left = left
         self.right = right
 
-from collections import deque
 
 def list_to_tree_node(data: list[int]) -> TreeNode:
+    """
+    converts a list into a tree structure for BT.
+    """
+    from collections import deque
     if not data:
         return None
 
