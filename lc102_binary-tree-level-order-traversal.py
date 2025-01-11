@@ -1,6 +1,7 @@
 from helper_func import TreeNode, list_to_tree_node, print_tree_level_order
 
-def levelOrder(root: TreeNode) -> list[list[int]]:
+def levelOrder(data: list[int]) -> list[list[int]]:
+    root = list_to_tree_node(data)
     if not root:
         return []
 
@@ -24,6 +25,5 @@ def levelOrder(root: TreeNode) -> list[list[int]]:
 
 data = [5, 3, 2, 9, None, 4, 11, -3, 8, 0, None, 7, 1]
 
-root = list_to_tree_node(data)
 
-print(levelOrder(root))
+print(levelOrder(data))
