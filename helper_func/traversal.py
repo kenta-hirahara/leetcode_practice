@@ -18,6 +18,17 @@ def postorder_recursive(node: TreeNode):
         postorder_recursive(node.right)
         print(node.val, end=' ')
 
+def levelorder(node: TreeNode):
+    from collections import deque
+    q = deque([node])
+    while q:
+        curr_node = q.popleft()
+        print(curr_node.val, end=' ')
+        if curr_node.left:
+            q.append(curr_node.left)
+        if curr_node.right:
+            q.append(curr_node.right)
+
 def main():
     # height = 0
     root = TreeNode(1)
@@ -52,6 +63,10 @@ def main():
 
     print("post-order recursive:")
     postorder_recursive(root)
+    print("\n")
+
+    print("level-order:")
+    levelorder(root)
     print("\n")
 
 if __name__ == '__main__':
