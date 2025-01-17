@@ -1,4 +1,4 @@
-from treenode import TreeNode
+from .treenode import TreeNode # relative imports | single dot (.) -> same directory
 
 def preorder_recursive(node: TreeNode):
     if node:
@@ -6,6 +6,17 @@ def preorder_recursive(node: TreeNode):
         preorder_recursive(node.left)
         preorder_recursive(node.right)
 
+def inorder_recursive(node: TreeNode):
+    if node:
+        inorder_recursive(node.left)
+        print(node.val, end=' ')
+        inorder_recursive(node.right)
+
+def postorder_recursive(node: TreeNode):
+    if node:
+        postorder_recursive(node.left)
+        postorder_recursive(node.right)
+        print(node.val, end=' ')
 
 def main():
     # height = 0
@@ -31,8 +42,17 @@ def main():
     root.right.right.left = TreeNode(14)
     root.right.right.right = TreeNode(15)
 
+    print("pre-order recursive:")
     preorder_recursive(root)
+    print("\n")
+
+    print("in-order recursive:")
+    inorder_recursive(root)
+    print("\n")
+
+    print("post-order recursive:")
+    postorder_recursive(root)
+    print("\n")
 
 if __name__ == '__main__':
     main()
-    
