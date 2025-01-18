@@ -1,5 +1,6 @@
 from helper_func import TreeNode, list_to_tree_node, levelorder
 
+# time complexity -> O(n+m)
 def mergeTrees(root1: TreeNode, root2: TreeNode) -> TreeNode:
     if not root1 and not root2:
         return None
