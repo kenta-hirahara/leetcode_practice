@@ -1,6 +1,9 @@
 def rob(nums: list[int]) -> int:
-    if not nums:
-        return 0
+    match len(nums):
+        case 0: return 0
+        case 1: return nums[0]
+        case 2: return max(nums)
+
     dp = [0 for _ in nums]
     for i, num in enumerate(nums):
         if i == 0:
