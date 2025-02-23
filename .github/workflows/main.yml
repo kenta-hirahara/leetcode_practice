@@ -15,15 +15,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install uv
+      - name: Install uv and pytest
         uses: astral-sh/setup-uv@v5
         with:
-          # Install a specific version of uv.
           version: "0.6.2"
-
-
-      - name: Install dependencies
-        run: uv pip install pytest
+      - run: uv pip install pytest
 
       - name: Run pytest
         run: uv pytest
